@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+    <div class="row align-items-center mb-5">
+        <div class="col-md-7">
+            <div class="card border-4 shadow-lg" style="border-color:#7c4a03; background:#fff8e1;">
+                <div class="card-body">
+                    <h1 class="display-4 fw-bold mb-3" style="color:#7c4a03; letter-spacing:2px;">
+                        <i class="bi bi-star-fill" style="color:#ceb16b;"></i> ชุมชนคาวบอย
+                    </h1>
+                    <p class="lead mb-4" style="color:#5c3a0a;">ยินดีต้อนรับสู่แดนตะวันตก<br>รวมข่าวสาร กิจกรรม และความรู้สำหรับคนที่ชื่นชอบคาวบอยตะวันตก</p>
+                    <a href="/about/" class="btn btn-lg" style="background:#ceb16b; color:#7c4a03; font-weight:bold;">เกี่ยวกับเรา</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 text-center">
+            <img src="statics/assets/img/MrYee.png" alt="Cowboy" class="img-fluid" style="max-height:220px;">
+        </div>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card shadow border-0" style="background:#fff8e1;">
+                <div class="card-body text-center">
+                    <i class="bi bi-flag" style="font-size:2rem; color:#7c4a03;"></i>
+                    <h5 class="card-title mt-2">ข่าวสารล่าสุด</h5>
+                    <p class="card-text">ติดตามข่าวสารและประกาศสำคัญสำหรับสมาชิก</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow border-0" style="background:#fff8e1;">
+                <div class="card-body text-center">
+                    <i class="bi bi-people" style="font-size:2rem; color:#7c4a03;"></i>
+                    <h5 class="card-title mt-2">กิจกรรมชุมชน</h5>
+                    <p class="card-text">ร่วมกิจกรรมและแลกเปลี่ยนความรู้กับผู้เชี่ยวชาญด้านประวัติศาสตร์คาวบอย</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow border-0" style="background:#fff8e1;">
+                <div class="card-body text-center">
+                    <i class="bi bi-book" style="font-size:2rem; color:#7c4a03;"></i>
+                    <h5 class="card-title mt-2">คลังความรู้</h5>
+                    <p class="card-text">แหล่งรวมบทความและประวัติศาสตร์แดนตะวันตก</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+{% endblock %}
