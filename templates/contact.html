@@ -1,7 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container mt-5">
-    <h2>Contact</h2>
-    <p>ช่องทางการติดต่อ เช่น อีเมล เบอร์โทร หรือฟอร์มติดต่อ</p>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-4 shadow-lg" style="border-color:#7c4a03; background:#fff8e1;">
+                <div class="card-body">
+                    <h2 class="fw-bold mb-3" style="color:#7c4a03; letter-spacing:2px;">
+                        <i class="bi bi-envelope" style="color:#ceb16b;"></i> ติดต่อนายอำเภอ
+                    </h2>
+                    <p class="lead mb-4" style="color:#5c3a0a;">
+                        สามารถติดต่อสอบถามหรือส่งข้อเสนอแนะถึงนายอำเภอได้ผ่านช่องทางด้านล่าง<br>
+                        เราพร้อมรับฟังและให้ความช่วยเหลือทุกท่านในสไตล์ตะวันตกที่อบอุ่น
+                    </p>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item" style="background:#fff8e1; color:#7c4a03; border:none;"><i class="bi bi-telephone" style="color:#ceb16b;"></i> โทร: 096-123-4567</li>
+                        <li class="list-group-item" style="background:#fff8e1; color:#7c4a03; border:none;"><i class="bi bi-envelope-open" style="color:#ceb16b;"></i> อีเมล: info@Sheriff.or.th</li>
+                    </ul>
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label" style="color:#7c4a03;">ชื่อของคุณ</label>
+                            <input type="text" class="form-control" id="name" placeholder="กรอกชื่อ...">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label" style="color:#7c4a03;">อีเมล</label>
+                            <input type="email" class="form-control" id="email" placeholder="example@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label" style="color:#7c4a03;">ข้อความ</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="เขียนข้อความ..."></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="background:#ceb16b; color:#7c4a03; font-weight:bold;">ส่งข้อความ</button>
+                    </form>
+                    <div class="text-end mt-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 {% endblock %}
