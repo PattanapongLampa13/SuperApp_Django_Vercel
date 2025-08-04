@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    .dystopian-card {
+        border: 4px solid #7c4a03;
+        background: #fff8e1;
+        border-radius: 1rem;
+        box-shadow: 0 4px 16px rgba(124,74,3,0.08);
+        font-family: 'Sarabun', Arial, Tahoma, sans-serif;
+    }
+    .dystopian-header {
+        background: #7c4a03;
+        color: #ffd700;
+        font-weight: bold;
+        font-size: 1.3rem;
+        padding: 0.75rem 1rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+    .dystopian-form-label {
+        color: #7c4a03;
+        font-weight: bold;
+    }
+    .dystopian-btn {
+        background: #ceb16b;
+        color: #7c4a03;
+        font-weight: bold;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1.5rem;
+        transition: background 0.2s;
+    }
+    .dystopian-btn:hover {
+        background: #ffd700;
+        color: #7c4a03;
+    }
+    .dystopian-table th, .dystopian-table td {
+        color: #7c4a03;
+        font-size: 1.1rem;
+        vertical-align: middle;
+    }
+    .dystopian-table thead th {
+        background: #ceb16b;
+        color: #fff;
+        border-bottom: 2px solid #7c4a03;
+    }
+</style>
+
+<div class="card dystopian-card mx-auto mb-4" style="width: 28rem;">
+    <div class="dystopian-header">
+        สูตรคูณ
+    </div>
+    <div class="card-body">
+        <form method="post" action="{% url 'multiply_page' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="count" class="form-label dystopian-form-label">ใส่แม่สูตรคูณ</label>
+                <input 
+                type="number" 
+                class="form-control"
+                id="count" 
+                name="number"
+                aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text" style="color:#888;">กรอกเลข</div>
+            </div>
+            <button type="submit" class="btn dystopian-btn">คำนวณ</button>
+        </form>
+    </div>
+</div>
+
+<div class="card dystopian-card mx-auto" style="width: 28rem;">
+    <div class="dystopian-header">
+        ตาราง
+    </div>
+    <div class="card-body" style="overflow-x:auto;">
+        <table class="table dystopian-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">number</th>
+                    <th scope="col">multiply</th>
+                    <th scope="col">results</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for a, b, c in results %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ b }}</td>
+                    <td>{{ a }}</td>
+                    <td>{{ c }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}
