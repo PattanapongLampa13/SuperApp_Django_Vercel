@@ -3,14 +3,16 @@ from httpx import request
 
 
 
-def home(request):
-    return render(request, 'home.html')
+def หน้าหลัก(request):
+    return render(request, 'หน้าหลัก.html')
 
 
-def about(request):
-    return render(request, 'about.html')
+def เกี่ยวกับ(request):
+    return render(request, 'เกี่ยวกับ.html')
 
 
-def contact(request):
-    return render(request, 'contact.html')
-                  
+def ติดต่อ(request):
+    return render(request, 'ติดต่อ.html')
+
+def วนซ้ำ(request):
+    return render(request, 'วนซ้ำ.html')
