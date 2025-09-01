@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-4 justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-4 shadow-lg text-center" style="border-color:#7c4a03; background:#fff8e1;">
+                <div class="card-body">
+                    <h2 class="fw-bold mb-3" style="color:#7c4a03; letter-spacing:2px;">
+                        <i class="bi bi-people-fill" style="color:#ceb16b;"></i> จำนวนนักเรียนทั้งหมด
+                    </h2>
+                    <p class="display-4" style="color:#7c4a03; font-weight:bold;">
+                        {{ student_count }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card border-4 shadow" style="border-color:#7c4a03; background:#fff8e1;">
+                <div class="card-header bg-transparent" style="color:#7c4a03; font-weight:bold; font-size:1.2rem; letter-spacing:1px;">
+                    <i class="bi bi-list-ul" style="color:#ceb16b;"></i> รายชื่อนักเรียน
+                </div>
+                <div class="card-body p-0">
+                    <div style="overflow-x:auto;">
+                        <style>
+                            .cowboy-table thead th {
+                                background: #ceb16b;
+                                color: #fff;
+                                border-bottom: 2px solid #7c4a03;
+                            }
+                            .cowboy-table tbody tr {
+                                background: #fff8e1;
+                            }
+                            .cowboy-table tbody tr:nth-child(even) {
+                                background: #f5e6c5;
+                            }
+                            .cowboy-table td, .cowboy-table th {
+                                color: #7c4a03;
+                                font-size: 1.05rem;
+                                vertical-align: middle;
+                            }
+                        </style>
+                        <table class="table cowboy-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">รหัส</th>
+                                    <th scope="col">คำนำหน้า</th>
+                                    <th scope="col">ชื่อ</th>
+                                    <th scope="col">นามสกุล</th>
+                                    <th scope="col">อายุ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for s in students %}
+                                <tr>
+                                    <th scope="row">{{ forloop.counter }}</th>
+                                    <td>{{ s.stid }}</td>
+                                    <td>{{ s.name_prefix }}</td>
+                                    <td>{{ s.first_name }}</td>
+                                    <td>{{ s.last_name }}</td>
+                                    <td>{{ s.age }}</td>
+                                </tr>
+                                {% empty %}
+                                <tr>
+                                    <td colspan="6" class="text-center">ไม่มีข้อมูลนักเรียน</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+{% endblock %}
